@@ -1,52 +1,66 @@
 # Online Private Tutor
 
-A web-based tutoring platform developed using Django that connects students with private tutors. The system allows students to find tutors, send tutoring requests, manage bookings, and interact with tutors through a user-friendly interface. Administrators can manage users, approve registrations, and monitor platform activities.
-
----
+A web-based Online Private Tutor platform developed using Django and SQLite. The system helps students find tutors, register accounts, access study materials, and interact with educational resources through a simple and user-friendly interface.
 
 ## Features
 
-### Student Module
-- Student Registration
-- Student Login
-- View Tutor Profiles
-- Send Tutor Requests
-- Book Tutors
-- View Booking Status
-- Manage Profile
-- Submit Reviews and Ratings
-
-### Tutor Module
-- Tutor Registration
-- Tutor Login
-- View Student Requests
-- Accept or Reject Requests
-- Manage Profile
-- View Reviews and Ratings
-
-### Admin Module
-- Admin Login
-- Approve or Reject Student Registrations
-- Approve or Reject Tutor Registrations
-- Manage Students
-- Manage Tutors
-- Manage Bookings
-- Manage Reviews
-- View System Activities
-
----
+- Student Registration and Login
+- Parent Registration and Login
+- Tutor Management
+- Book Management
+- View Available Tutors
+- Study Material Access
+- Admin Approval System
+- SQLite Database Integration
+- Responsive User Interface
 
 ## Technologies Used
 
 - Python
 - Django
-- SQLite
-- HTML5
-- CSS3
+- SQLite3
+- HTML
+- CSS
 - JavaScript
 - Bootstrap
 
----
+## Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/sheikismailajmal/OnlinePrivateTutor.git
+```
+
+2. Navigate to the project folder
+
+```bash
+cd OnlinePrivateTutor
+```
+
+3. Install dependencies
+
+```bash
+pip install django
+```
+
+4. Run migrations
+
+```bash
+python manage.py migrate
+```
+
+5. Start the development server
+
+```bash
+python manage.py runserver
+```
+
+6. Open your browser and visit
+
+```text
+http://127.0.0.1:8000/
+```
 
 ## Project Structure
 
@@ -57,145 +71,52 @@ OnlinePrivateTutor/
 ├── project/
 ├── static/
 ├── templates/
+├── screenshots/
 ├── manage.py
 └── README.md
 ```
 
----
-
-## Installation and Setup
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/sheikismajlajmal/OnlinePrivateTutor.git
-cd OnlinePrivateTutor
-```
-
-### 2. Create Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-### 3. Activate Virtual Environment
-
-#### Windows
-
-```bash
-venv\Scripts\activate
-```
-
-#### Linux/Mac
-
-```bash
-source venv/bin/activate
-```
-
-### 4. Install Dependencies
-
-```bash
-pip install django
-```
-
-Or if a requirements file exists:
-
-```bash
-pip install -r requirements.txt
-```
-
-### 5. Apply Database Migrations
-
-```bash
-python manage.py migrate
-```
-
-### 6. Create Superuser
-
-```bash
-python manage.py createsuperuser
-```
-
-Follow the prompts to create the admin account.
-
-### 7. Run Development Server
-
-```bash
-python manage.py runserver
-```
-
-Open:
-
-```text
-http://127.0.0.1:8000/
-```
-
----
-
-## User Roles
-
-### Administrator
-
-- Approve student registrations
-- Approve tutor registrations
-- Manage tutors and students
-- Monitor bookings and reviews
-
-### Student
-
-- Register and login
-- Search tutors
-- Send booking requests
-- Manage profile
-- Give reviews
-
-### Tutor
-
-- Register and login
-- Manage profile
-- View requests
-- Accept or reject bookings
-
----
-
 ## Screenshots
 
-Add screenshots of:
+### Home Page
 
-1. Home Page
-2. Student Registration
-3. Student Login
-4. Tutor Registration
-5. Tutor Login
-6. Admin Dashboard
-7. Booking Page
-8. Review Page
+![Home Page](screenshots/home_page.png)
 
----
+### Student Registration
+
+![Student Registration](screenshots/student_registration_page.png)
+
+### Login Page
+
+![Login Page](screenshots/login_page.png)
+
+### Tutors Page
+
+![Tutors Page](screenshots/tutors_page.png)
+
+### Books Page
+
+![Books Page](screenshots/books_page.png)
+
+### Add Tutor Page
+
+![Add Tutor Page](screenshots/add_tutor_page.png)
 
 ## Future Enhancements
 
 - Online Payment Integration
-- Video Call Support
-- Real-Time Chat System
+- Tutor Rating System
+- Live Chat Feature
+- Video Session Integration
 - Email Notifications
-- OTP Verification
-- Tutor Recommendation System
-- Mobile Application
-
----
 
 ## Author
 
-**Sheik Ismail Ajmal**
+Sheik Ismail Ajmal
 
-MCA (Cyber Security)  
+MCA (Cyber Security)
+
 Jain University
-
-GitHub:
-https://github.com/sheikismajlajmal
-
----
 
 ## License
 
