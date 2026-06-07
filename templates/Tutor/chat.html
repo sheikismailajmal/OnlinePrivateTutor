@@ -1,0 +1,139 @@
+{% extends 'Tutor/common_tu.html' %}
+{% load static %}
+{% for m in messages %}
+<script>
+    alert("{{m}}")
+</script>
+{% endfor %}
+{% block content %}
+	
+	<section class="hero-wrap " style="background-image: url('../static/images/bg_2.jpg');height: 350px;">
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate pb-5 text-center">
+					<!-- <p class="breadcrumbs"><span class="mr-2"><a href="/tutorhome">Home <i class="fa fa-chevron-right"></i></a></span> <span>Chat with Parent<i class="fa fa-chevron-right"></i></span></p>
+					<h1 class="mb-0 bread">Chat with Parent</h1> -->
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	 <section class="ftco-section">
+		<!-- <div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6">
+					<div class="wrapper">
+						<div class="row no-gutters">
+							<div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
+								<div class="contact-wrap w-100 p-md-5 p-4"> -->
+									<h3 class="mb-4" style="margin-left: 540px;">Chat with Parent</h3>
+                                    <script src="https://kit.fontawesome.com/37b411113e.js" crossorigin="anonymous"></script>
+
+<br>
+<div class="container-fluid content-top-gap" style="width: 70%;">
+    <!-- chatting -->
+    <div class="data-tables" style="background: transparent;">
+        <div class="row ">
+            <div class="col-lg-12 chart-grid mb-4">
+                <div class="card card_border p-4" style="background-image:  linear-gradient(to bottom,  rgba(116, 116, 116, 0.73),rgba(245, 246, 252, 0.52)),
+                    url('/static/media/profile/chat_b.jpg'); border-radius: 20px;background-position: center; ">
+                    <div class="card-header chart-grid__header pl-0 pt-0 ">
+                        <b style="margin: 10px;margin-top: 20px;">Chatting</b>
+                    </div>
+                    <div class="messaging">
+                        <div class="inbox_msg">
+                            <div class="inbox_people">
+                                <!-- <div class="headind_srch">
+                     <div class="srch_bar">
+                        <div class="stylish-input-group">
+                        <input type="text" class="search-bar" placeholder="Search Chat">
+                        <span class="input-group-addon">
+                            <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                        </span> </div>
+                    </div> 
+                    </div> -->
+                            </div>
+                            <div class="mesgs">
+                                {% if chats %}
+
+                                <div class="msg_history">
+                                    {% for message in chats %}
+                                    {% if message.type == "teacher" %}
+                                    <div class="incoming_msg">
+                                        <div class="incoming_msg_img">
+                                            <img src="/static/chat/media/du1.jpg" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="received_msg">
+                                            <div class="received_withd_msg">
+                                                <p
+                                                    style="text-transform: unset; background-color: rgb(190, 198, 211);width: 400px;padding: 8px;border-radius: 10px;color: black;text-transform: capitalize;">
+                                                    {{message.message}} <br><span class="time_date"
+                                                        style="font-size: 9px;">
+                                                        {{message.date}}|{{message.time}}</span></p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% else %}
+                                    <div class="right" style="margin-left: 450px;">
+                                        <div class="outgoing_msg">
+                                            <div class="sent_msg">
+                                                <p
+                                                    style="text-transform: unset; background-color: rgb(170, 168, 168);width: 400px;padding: 8px;border-radius: 10px; color: black;text-transform: capitalize;">
+                                                    {{message.message}} <br><span class="time_date"
+                                                        style="font-size: 10px;"><span class="time_date"
+                                                            style="font-size: 9px;">
+                                                            {{message.date}}|{{message.time}}</span></p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                                <div class="type_msg"><br>
+                                    <center>
+                                        <div class="input_msg_write">
+                                            <form method="post">
+                                                {% csrf_token %}
+                                                <input type="text" name="message" class="form-control"
+                                                    style="width: 70%;border-radius: 100px"
+                                                    placeholder="&#9786;Message" required/> <br>
+                                                <button type="submit"
+                                                    style="position: relative;top: -59px;left: 280px;bottom: 0; border-radius: 10px;border: none;outline: none; background: transparent; "
+                                                     type="button"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" id="send">
+                                                        <path fill="none" d="M0 0h24v24H0V0z"></path>
+                                                        <path
+                                                            d="M3.4 20.4l17.45-7.48c.81-.35.81-1.49 0-1.84L3.4 3.6c-.66-.29-1.39.2-1.39.91L2 9.12c0 .5.37.93.87.99L17 12 2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z">
+                                                        </path>
+                                                    </svg></button>
+                                                <p></p>
+                                            </form>
+                                        </div>
+                                        <br>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //chatting -->
+</div>
+</section>
+
+{% if msg %}
+<script>
+    alert("{{msg}}");
+</script>
+{% endif %}
+{% endblock %}
+
+
+	

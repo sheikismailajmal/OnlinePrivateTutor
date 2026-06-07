@@ -1,0 +1,56 @@
+{% extends 'Tutor/common_tu.html' %}
+{% load static %}
+{% for m in messages %}
+<script>
+    alert("{{m}}")
+</script>
+{% endfor %}
+{% block content %}
+	
+<section class="hero-wrap" style="background-image: url('../static/images/bg_2.jpg');height: 350px;">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+            <div class="col-md-9 ftco-animate pb-5 text-center">
+                <!-- <p class="breadcrumbs"><span class="mr-2"><a href="/tutorhome">Home <i class="fa fa-chevron-right"></i></a></span> <span>View Review<i class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-0 bread">View Review</h1> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section">
+    <div class="col-lg-12 col-md-7 order-md-last d-flex align-items-stretch">
+        <div class="contact-wrap w-100 p-md-5 p-4">
+            <h3 class="mb-4">View Reviews</h3>
+            <table class="table table-hover" cellspacing="2" cellpadding="2">
+                <thread>
+                    <tr class="table-info">
+                        <th scope="col">Name</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col">Review</th>
+                        <!-- <th colspan="3" scope="col">Action</th> -->
+                    </tr>   
+                </thread>
+                <tbody>
+                    {% for review in data %}
+                    <tr>
+                        <td>
+                            {% if review.student %}
+                                {{ review.student.Username2 }}
+                            {% elif review.parent %}
+                                {{ review.parent.Username }}
+                            {% endif %}
+                        </td>
+                        <td>{{ review.rating }}🌟</td>
+                        <td>{{ review.review }}</td>
+                        <!-- Add action buttons or links here -->
+                        <!--<td><a href="/actionbooking?id={{i.id}}&status=1" class="btn btn-success">Approve</a></td>-->
+                        <!-- <td><a href="/deletereview?id={{i.id}}" class="btn btn-success">Delete</a></td> -->
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table> 
+        </div>
+    </div>
+</section>
+{% endblock %}
